@@ -1,3 +1,9 @@
 #! /usr/bin/env node
-var moment = require('moment')
-console.log(moment.utc().format('YYYYMMDD_HHmm'));
+const moment = require('moment')
+const now = moment.utc();
+const formats = {
+  iso: now.format(),
+  epoch_millis: now.valueOf(),
+  filename: now.format('YYYYMMDD_HHmm')
+};
+console.log(formats);
